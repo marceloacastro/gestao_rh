@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+
+    <h1> Criar/Atualizar Documento </h1>
+
+    <br>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <br>
+        <button type="submit" class="btn btn-info">Adicionar</button>
+
+    </form>
+
+{% endblock %}
