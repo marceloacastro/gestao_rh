@@ -3,14 +3,14 @@
 
 {% block main %}
 
-    <h1> Exclusão de Funcionário </h1>
+    <h1> Exclusão de Horas Extras </h1>
 
     <br>
 
     <form method="POST">
 
         {% csrf_token %}
-        <h3> Você confirma que deseja Excluir " {{ funcionario }} " ? </h3>
+        <h3> Você confirma que deseja Excluir " {{ object }} " ? </h3>
         {{ form }}
         <button type="submit" class="btn btn-danger">Confirmar</button>
 

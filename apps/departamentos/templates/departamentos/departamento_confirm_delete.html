@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 {% block main %}
 
@@ -9,7 +10,7 @@
     <form method="POST">
 
         {% csrf_token %}
-        <h3> Você confirma que deseja Excluir {{ departamento }} ? </h3>
+        <h3> Você confirma que deseja Excluir " {{ departamento }} " ? </h3>
         {{ form }}
         <button type="submit" class="btn btn-danger">Confirmar</button>
 

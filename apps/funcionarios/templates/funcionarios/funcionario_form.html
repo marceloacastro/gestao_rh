@@ -12,7 +12,13 @@
         {% csrf_token %}
         {{ form|bootstrap }}
         <br>
+
         <button type="submit" class="btn btn-info">Salvar</button>
+
+        <!-- O COMANDO ABAIXO , SERVE PARA INCLUIRMOS UM BOTAO DE DELETE DENTRO DO FORM, OPCAO AO BOTAO NO LIST -->
+        {% if object %}
+            <a href="{% url 'delete_funcionario' object.id %}" class="btn btn-danger"> Deletar </a>
+        {% endif %}
 
     </form>
 
@@ -21,7 +27,6 @@
     <a href="{% url 'create_documento' object.id %}" class="btn btn-success" >Adicionar Documento</a>
 
     {% for documento in object.documento_set.all %}
-        <br>
         <a href="{{ documento.arquivo.url }} "> {{ documento.descricao }} </a>
     {% endfor %}
 

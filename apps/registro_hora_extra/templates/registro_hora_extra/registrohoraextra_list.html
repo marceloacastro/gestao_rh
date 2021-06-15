@@ -1,15 +1,25 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 {% block main %}
 
     <h1> Banco de Horas </h1>
 
-    <br>
-
     {% for registro_he in object_list %}
 
-        {{ registro_he }}
+        <br>
+        <a href="{% url 'update_hora_extra' registro_he.id %}"> {{ registro_he }} </a>
+        <a href="{% url 'delete_hora_extra' registro_he.id %}"> Deletar </a>
 
     {% endfor %}
+
+    {% if not object_list %}
+        <h3> Não existe registros de Hora Extra no Banco de Dados.</h3>
+    {% endif %}
+
+    <br>
+    <br>
+
+    <a href="{% url 'create_hora_extra' %}" class="btn btn-info"> Criar Hora Extra </a>
 
 {% endblock %}

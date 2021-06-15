@@ -3,20 +3,20 @@
 
 {% block main %}
 
-    <h1> Criar/Atualizar Documento </h1>
+    <h1> Criar/Atualizar Horas Extras </h1>
 
     <br>
 
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST">
 
         {% csrf_token %}
         {{ form|bootstrap }}
         <br>
-        <button type="submit" class="btn btn-info">Adicionar</button>
+        <button type="submit" class="btn btn-info">Salvar</button>
 
         <!-- O COMANDO ABAIXO , SERVE PARA INCLUIRMOS UM BOTAO DE DELETE DENTRO DO FORM, OPCAO AO BOTAO NO LIST -->
         {% if object %}
-            <a href="{% url 'delete_documento' object.id %}" class="btn btn-danger"> Deletar </a>
+            <a href="{% url 'delete_hora_extra' object.id %}" class="btn btn-danger"> Deletar </a>
         {% endif %}
 
     </form>

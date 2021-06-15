@@ -14,6 +14,11 @@
         <br>
         <button type="submit" class="btn btn-info">Salvar</button>
 
+        <!-- O COMANDO ABAIXO , SERVE PARA INCLUIRMOS UM BOTAO DE DELETE DENTRO DO FORM, OPCAO AO BOTAO NO LIST -->
+        {% if object %}
+            <a href="{% url 'delete_departamento' object.id %}" class="btn btn-danger"> Deletar </a>
+        {% endif %}
+
     </form>
 
 {% endblock %}
